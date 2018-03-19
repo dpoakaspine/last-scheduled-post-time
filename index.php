@@ -12,8 +12,8 @@
  */
 
 
-add_action( 'post_submitbox_misc_actions', 'reblog_add_button_html' );
-function reblog_add_button_html(){
+add_action( 'post_submitbox_misc_actions', 'last_scheduled_post_time_add_button_html' );
+function last_scheduled_post_time_add_button_html(){
   global $post;
   $args = array(
     'posts_per_page' => 1,
@@ -27,7 +27,7 @@ function reblog_add_button_html(){
     <div>
         <hr />
         <div class="misc-pub-section misc-pub-revisions">
-        	<?php echo date_i18n( 'd. M Y @ H:i', strtotime( $last_id[0]->post_date ) );  ?> <?php echo __('last scheduled post'); ?>
+        	<?php echo date_i18n( 'd. M Y @ H:i', strtotime( $last_id[0]->post_date ) );  ?> <?php echo __('last scheduled post','last_scheduled_post_time'); ?>
         </div>
 
     </div>
